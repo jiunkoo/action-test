@@ -19,7 +19,7 @@ permissions:
  
 jobs:
   build:
-    runs-on: fedora-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -39,7 +39,7 @@ jobs:
  
   deploy:
     needs: build
-    runs-on: fedora-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v2
