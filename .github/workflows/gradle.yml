@@ -33,7 +33,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: cicdsample
+          name: action-test
           path: build/libs/*.jar
  
   deploy:
@@ -43,7 +43,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: cicdsample
+          name: action-test
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.5.4
         with:
