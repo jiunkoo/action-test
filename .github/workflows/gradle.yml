@@ -39,7 +39,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: build-docker-image
+    needs: build
     runs-on: self-hosted
 
     steps:
