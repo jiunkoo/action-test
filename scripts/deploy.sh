@@ -1,7 +1,7 @@
 REPOSITORY=/home/ec2-user/app
 cd $REPOSITORY
 
-APP_NAME=curriculum #1
+APP_NAME=action-test #1
 JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep '.jar' | tail -n 1)
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
@@ -17,4 +17,4 @@ else
 fi
 
 echo "> $JAR_PATH 배포" #3
-nohup java -jar /home/ec2-user/app/build/libs/curriculum-1.0.jar --spring.config.location=/home/ec2-user/application.yml > /dev/null 2> /dev/null < /dev/null &
+nohup java -jar /home/ec2-user/app/build/libs/action-test-1.0.jar --spring.config.location=/home/ec2-user/application.yml > /dev/null 2> /dev/null < /dev/null &
