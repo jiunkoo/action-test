@@ -1,7 +1,8 @@
-REPOSITORY=/home/ec2-user/app/action-test/
-cd $REPOSITORY
+DEFAULT=/home/ec2-user/app/
+cd $DEFAULT
 
 APP_NAME=action-test
+REPOSITORY=$DEFAULT/$APP_NAME
 JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep 'SNAPSHOT.jar' | tail -n 1)
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
@@ -16,6 +17,5 @@ else
   sleep 5
 fi
 
-cd app
-echo "> $JAR_PATH 배포"
+echo ">>> $JAR_PATH 배포"    >> /home/ec2-user/app/log/deploy.log
 nohup java -jar $JAR_PATH > /dev/null 2> /dev/null < /dev/null &
